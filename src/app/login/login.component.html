@@ -1,0 +1,19 @@
+<p>login works!</p>
+<h1>Form dang nhap</h1>
+<form [formGroup]="login" class="col-md-6 offset-md-3">
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input type="text" class="form-control" id="username" formControlName="username">
+  <input formControlName="email" type="email" class="form-control">
+  <input formControlName="password">
+  </div>
+  // formcontrol
+  <div class="alert alert-danger" role="alert"
+       *ngIf=
+         "login.hasError('emailpasswordnotmatch') && login.get('password').touched">
+    // haserror dùng
+    //touched là
+    //ngIf dung de kiem tra xem form dang nhap co loi hay khong
+    Password or email does not match!
+  </div>
+  </form>
